@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "./styles/themes.css";
+import Header from "./components/Header";
+import ProfileHeader from "./components/ProfileHeader";
+import { ThemeProvider } from "./context/ThemeContext";
+import UserProfile from "./components/UserProfile";
+import GitHubCalendarHeatmap from "./components/GitHubCalendarHeatmap";
+import Repositories from "./components/Repositories";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider>
+      <div className="App bg-primary min-h-screen">
+        <Header />
+        <div className="flex">
+          <main className="flex-1">
+            <ProfileHeader />
+            <div className="flex justify-evenly max-md:flex-col">
+              <UserProfile />
+              <Repositories />
+            </div>
+
+            <GitHubCalendarHeatmap />
+          </main>
+        </div>
+      </div>
+    </ThemeProvider>
   );
 }
 

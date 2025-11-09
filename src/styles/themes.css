@@ -1,0 +1,307 @@
+/* GitHub-like Theme Variables */
+:root {
+  /* Default Dark Theme Colors */
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --bg-tertiary: #21262d;
+  --bg-overlay: #161b22;
+  --bg-hover: #21262d;
+
+  --text-primary: #f0f6fc;
+  --text-secondary: #8b949e;
+  --text-muted: #7d8590;
+  --text-inverse: #24292f;
+
+  --border-default: #30363d;
+  --border-muted: #21262d;
+  --border-subtle: #161b22;
+
+  --accent-primary: #58a6ff;
+  --accent-secondary: #1f6feb;
+  --accent-hover: #388bfd;
+
+  --success: #3fb950;
+  --danger: #f85149;
+  --warning: #d29922;
+  --info: #58a6ff;
+
+  --shadow-small: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-large: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Dark Theme Colors */
+[data-theme="dark"],
+.dark {
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --bg-tertiary: #21262d;
+  --bg-overlay: #161b22;
+  --bg-hover: #21262d;
+
+  --text-primary: #f0f6fc;
+  --text-secondary: #8b949e;
+  --text-muted: #7d8590;
+  --text-inverse: #24292f;
+
+  --border-default: #30363d;
+  --border-muted: #21262d;
+  --border-subtle: #161b22;
+
+  --accent-primary: #58a6ff;
+  --accent-secondary: #1f6feb;
+  --accent-hover: #388bfd;
+
+  --success: #3fb950;
+  --danger: #f85149;
+  --warning: #d29922;
+  --info: #58a6ff;
+
+  --shadow-small: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-large: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Dark Dimmed Theme */
+[data-theme="dark-dimmed"],
+.dark-dimmed {
+  --bg-primary: #22272e;
+  --bg-secondary: #2d333b;
+  --bg-tertiary: #373e47;
+  --bg-overlay: #2d333b;
+  --bg-hover: #373e47;
+
+  --text-primary: #adbac7;
+  --text-secondary: #768390;
+  --text-muted: #636c76;
+  --text-inverse: #22272e;
+
+  --border-default: #444c56;
+  --border-muted: #373e47;
+  --border-subtle: #2d333b;
+
+  --accent-primary: #539bf5;
+  --accent-secondary: #316dca;
+  --accent-hover: #6cb6ff;
+
+  --success: #57ab5a;
+  --danger: #e5534b;
+  --warning: #c69026;
+  --info: #539bf5;
+
+  --shadow-small: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.2);
+  --shadow-large: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* 
+  ADD NEW THEMES HERE
+  
+  Example: Light Theme (if you want to re-add it)
+  [data-theme="light"], .light {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f6f8fa;
+    --bg-tertiary: #f1f3f4;
+    --bg-overlay: #ffffff;
+    --bg-hover: #f3f4f6;
+    
+    --text-primary: #24292f;
+    --text-secondary: #57606a;
+    --text-muted: #6e7781;
+    --text-inverse: #ffffff;
+    
+    --border-default: #d0d7de;
+    --border-muted: #d8dee4;
+    --border-subtle: #f6f8fa;
+    
+    --accent-primary: #0969da;
+    --accent-secondary: #218bff;
+    --accent-hover: #0550ae;
+    
+    --success: #1a7f37;
+    --danger: #d1242f;
+    --warning: #9a6700;
+    --info: #0969da;
+    
+    --shadow-small: 0 1px 3px rgba(16, 22, 26, 0.1);
+    --shadow-medium: 0 4px 6px rgba(16, 22, 26, 0.1);
+    --shadow-large: 0 8px 25px rgba(16, 22, 26, 0.15);
+  }
+  
+  To add the new theme:
+  1. Copy the above template and modify the colors
+  2. Add the theme to ThemeToggle component's themes array
+  3. Update ThemeContext toggleTheme function if needed
+*/
+
+/* Base Styles */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Tailwind Classes for theming */
+.bg-primary {
+  background-color: var(--bg-primary);
+}
+.bg-secondary {
+  background-color: var(--bg-secondary);
+}
+.bg-tertiary {
+  background-color: var(--bg-tertiary);
+}
+.bg-overlay {
+  background-color: var(--bg-overlay);
+}
+.bg-hover:hover {
+  background-color: var(--bg-hover);
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+.text-secondary {
+  color: var(--text-secondary);
+}
+.text-muted {
+  color: var(--text-muted);
+}
+.text-inverse {
+  color: var(--text-inverse);
+}
+
+.border-default {
+  border-color: var(--border-default);
+}
+.border-muted {
+  border-color: var(--border-muted);
+}
+.border-subtle {
+  border-color: var(--border-subtle);
+}
+
+.accent-primary {
+  color: var(--accent-primary);
+}
+.accent-secondary {
+  color: var(--accent-secondary);
+}
+.bg-accent-primary {
+  background-color: var(--accent-primary);
+}
+.bg-accent-secondary {
+  background-color: var(--accent-secondary);
+}
+.bg-accent-hover:hover {
+  background-color: var(--accent-hover);
+}
+
+.text-success {
+  color: var(--success);
+}
+.text-danger {
+  color: var(--danger);
+}
+.text-warning {
+  color: var(--warning);
+}
+.text-info {
+  color: var(--info);
+}
+
+.bg-success {
+  background-color: var(--success);
+}
+.bg-danger {
+  background-color: var(--danger);
+}
+.bg-warning {
+  background-color: var(--warning);
+}
+.bg-info {
+  background-color: var(--info);
+}
+
+.shadow-small {
+  box-shadow: var(--shadow-small);
+}
+.shadow-medium {
+  box-shadow: var(--shadow-medium);
+}
+.shadow-large {
+  box-shadow: var(--shadow-large);
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* GitHub-like button styles */
+.btn-primary {
+  background-color: var(--accent-primary);
+  color: var(--text-inverse);
+  border: 1px solid var(--accent-primary);
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.btn-secondary {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-default);
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-hover);
+  border-color: var(--border-muted);
+}
+
+/* Input styles */
+.input-default {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+  padding: 8px 12px;
+  transition: all 0.2s ease;
+}
+
+.input-default:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.3);
+}
+
+/* Card styles */
+.card {
+  background-color: var(--bg-overlay);
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+  box-shadow: var(--shadow-small);
+}
+
+.card-header {
+  padding: 16px;
+  border-bottom: 1px solid var(--border-muted);
+  background-color: var(--bg-secondary);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.card-body {
+  padding: 16px;
+}
